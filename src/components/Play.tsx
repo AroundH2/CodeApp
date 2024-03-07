@@ -39,8 +39,10 @@ export const Play = (props:Props)=> {
 
     return (
         <>
-            <button onClick={() =>
+            <div className='text'>    
+                <button onClick={() =>
             Sound()}>Play</button>
+            </div>
         </>
     )
 }
