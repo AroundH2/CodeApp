@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import { Code, codeList, CodeType } from "./Allcode"
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
+import { SimpleDialogbutton } from "./components/Dialogbutton"
 
 function App() {
   const [music, setMusic] = useState<CodeType[]>([]);
@@ -16,13 +17,19 @@ function App() {
 
   return (
     <>
+      <SimpleDialogbutton codeList={codeList} onSelect={(t) => { setMusic(da => [...da, t]) }} />
       <Play key={i} law={music} />
       {codeList.map((t, i) => (
         <Sebutton
           codeName={t.codeName}
           onClick={() => {
             console.log("C code");
-            setMusic(da => [...da, t])
+            if (music.length < 8) {
+              setMusic(da => [...da, t])
+            } else {
+              alert("ノードがいっぱいです");
+              console.log(music);
+            }
           }} />))}
       <div>
         <Stack direction="row" spacing={4}>
@@ -58,7 +65,6 @@ function App() {
           ))
           }</Stack>
       </div>
-
     </>
   );
 }

@@ -5,11 +5,13 @@ import D4 from "./mp3/D4.mp3";
 import E4 from "./mp3/E4.mp3";
 import F4 from "./mp3/F4.mp3";
 import G4 from "./mp3/G4.mp3";
+import Cm4 from "./mp3/Cm4.mp3";
 
 export const Code = {
     A4: A4,
     B4: B4,
     C4: C4,
+    Cm4: Cm4,
     D4: D4,
     E4: E4,
     F4: F4,
@@ -23,6 +25,7 @@ export const codeList: CodeType[] = [
         codeName: "C",
         code: Code.C4,
     },
+    { codeName: "Cm", code: Code.Cm4 },
     {
         codeName: "D",
         code: Code.D4,
