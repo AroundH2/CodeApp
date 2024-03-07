@@ -1,18 +1,17 @@
 import React from "react";
-import './App.css';
-import useSound from 'use-sound';
+import "./App.css";
+import useSound from "use-sound";
 import sound from "./Allcode/C4.mp3";
 import sound1 from "./Allcode/B4.mp3";
-import {Play} from "./components/Play"
-import {sleep} from './Sleep';
+import { Play } from "./components/Play";
+import { sleep } from "./Sleep";
 
-import Button from '@mui/material/Button';
-
+import Button from "@mui/material/Button";
 
 function App() {
-  const music = [sound,sound1];
+  const music = [sound, sound1];
   let i = 0;
-  
+
   /*function sleep(ms: number): Promise<void> {
     return new Promise<void>((resolve) => {
         setTimeout(() => {
@@ -56,7 +55,7 @@ function App() {
 
   return (
     <>
-      <Play key={i} law={music}/>
+      <Play key={i} law={music} />
       <h2>{sound}</h2>
       <h4>{music[0]}</h4>
       <h5>{music[1]}</h5>
