@@ -9,6 +9,8 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { SimpleDialogbutton } from "./components/Dialogbutton"
 import { Ccode, Dcode, Ecode, Fcode, Gcode, } from "./Allcode"
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Typography from '@mui/material/Typography';
 
 function App() {
   const [music, setMusic] = useState<CodeType[]>([]);
@@ -18,10 +20,15 @@ function App() {
 
   return (
     <>
+      <Typography variant="h2" gutterBottom>
+        Coder
+      </Typography>
       <Play key={i} law={music} />
       <Stack direction="row" spacing={1}>
         {Object.entries(ViewCode).map(([key, value]) =>
-          <SimpleDialogbutton text={key} codeList={value} onSelect={(code) => { setMusic(da => [...da, code]) }} />
+          <>
+            <SimpleDialogbutton text={key} codeList={value} onSelect={(code) => { setMusic(da => [...da, code]) }} />
+          </>
         )}
       </Stack>
 
@@ -40,36 +47,43 @@ function App() {
           <SimpleDialogbutton text={t.codeName} codeList={codeList} onSelect={(code) => { setMusic(da => [...da, code]) }} />
         ))} */}
       <div>
-        <Stack direction="row" spacing={4}>
+        <Stack direction="row" alignItems="center" spacing={4}>
           {Array.from(new Array(4)).map((_, i) => (
-            <Box
-              height={10}
-              width={10}
-              my={4}
-              display="flex"
-              alignItems="center"
-              gap={4}
-              p={2}
-              sx={{ border: '2px solid grey' }}
-            >
-              {music.length > i ? music[i].codeName : ""}
-            </Box>
-          ))
-          }</Stack>
-        <Stack direction="row" spacing={4}>
+            <>
+              <Box
+                height={10}
+                width={10}
+                my={4}
+                display="flex"
+                alignItems="center"
+                gap={4}
+                p={2}
+                sx={{ border: '2px solid grey' }}
+              >
+                {music.length > i ? music[i].codeName : ""}
+              </Box>
+              <ArrowForwardIcon />
+            </>
+          ))}
+        </Stack>
+        <Stack direction="row" alignItems="center" spacing={4}>
           {Array.from(new Array(4)).map((_, i) => (
-            <Box
-              height={10}
-              width={10}
-              my={4}
-              display="flex"
-              alignItems="center"
-              gap={4}
-              p={2}
-              sx={{ border: '2px solid grey' }}
-            >
-              {music.length > i + 4 ? music[i + 4].codeName : ""}
-            </Box>
+            <>
+              <Box
+                height={10}
+                width={10}
+                my={4}
+                display="flex"
+                alignItems="center"
+                gap={4}
+                p={2}
+                sx={{ border: '2px solid grey' }}
+              >
+                {music.length > i + 4 ? music[i + 4].codeName : ""}
+              </Box>
+              {(i < 3 &&
+                <ArrowForwardIcon />)}
+            </>
           ))
           }</Stack>
       </div>

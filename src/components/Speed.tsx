@@ -2,13 +2,12 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Slider from '@mui/material/Slider';
-import VolumeDown from '@mui/icons-material/VolumeDown';
-import VolumeUp from '@mui/icons-material/VolumeUp';
+import SlowMotionVideoIcon from '@mui/icons-material/SlowMotionVideo';
 
-export const Volume: React.FC<{
-    volume: number;
+export const Speed: React.FC<{
+    speed: number;
     onChange: (value: number) => void;
-}> = ({ volume, onChange }) => {
+}> = ({ speed, onChange }) => {
 
     const handleChange = (event: Event, newValue: number | number[]) => {
         onChange(newValue as number);
@@ -17,14 +16,14 @@ export const Volume: React.FC<{
     return (
         <Box sx={{ width: 200 }}>
             <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
-                <VolumeDown />
+                <SlowMotionVideoIcon />
                 <Slider aria-label=""
+                    valueLabelDisplay="auto"
                     shiftStep={1}
                     step={0.1}
                     marks
-                    min={0}
-                    max={1} value={volume} onChange={handleChange} />
-                <VolumeUp />
+                    min={0.1}
+                    max={2} value={speed} onChange={handleChange} />
             </Stack>
         </Box>
     );
