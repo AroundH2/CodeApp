@@ -1,17 +1,18 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import { Sebutton } from './Sebutton';
-import { CodeType } from '../Allcode';
+import { CodeType, ViwCode } from '../Allcode';
 import { SimpleDialog } from './Dialog';
-
+import Stack from '@mui/material/Stack';
 
 interface Dialogbutton {
+    text: string
     codeList: CodeType[];
     onSelect: (value: CodeType) => void;
 }
 
 export function SimpleDialogbutton(props: Dialogbutton) {
-    const { onSelect, codeList } = props;
+    const { onSelect, codeList, text } = props;
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -30,9 +31,15 @@ export function SimpleDialogbutton(props: Dialogbutton) {
 
     return (
         <div>
+            {/* {ViwCode.map((t, i) => (
+                <Button variant="outlined" sx={{ textTransform: "none" }} onClick={handleClickOpen}>
+                    {t}
+                </Button>
+            ))} */}
             <Button variant="outlined" sx={{ textTransform: "none" }} onClick={handleClickOpen}>
-                m
+                {text}
             </Button>
+
             <SimpleDialog
                 open={open}
                 onClose={handleClose}
