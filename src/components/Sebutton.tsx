@@ -7,7 +7,7 @@ export const Sebutton: React.FC<{
     onClick: () => void;
 }> = ({ codeName, onClick }) => {
     return (
-        <Button variant="outlined" onClick={onClick}>
+        <Button variant="outlined" sx={{ textTransform: "none" }} onClick={onClick}>
             {codeName}
         </Button>
     );

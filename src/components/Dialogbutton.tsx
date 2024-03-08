@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import { Sebutton } from './Sebutton';
-import { CodeType, ViwCode } from '../Allcode';
+import { CodeType, ViewCode } from '../Allcode';
 import { SimpleDialog } from './Dialog';
 import Stack from '@mui/material/Stack';
 

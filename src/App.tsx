@@ -4,10 +4,11 @@ import { Play } from "./components/Play";
 import { sleep } from "./Sleep";
 import { Sebutton } from "./components/Sebutton";
 import Button from "@mui/material/Button";
-import { Code, codeList, CodeType, ViwCode, DialogCode } from "./Allcode"
+import { Code, codeList, CodeType, ViewCode, DialogCode } from "./Allcode"
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { SimpleDialogbutton } from "./components/Dialogbutton"
+import { Ccode, Dcode, Ecode, Fcode, Gcode, } from "./Allcode"
 
 function App() {
   const [music, setMusic] = useState<CodeType[]>([]);
@@ -19,7 +20,12 @@ function App() {
     <>
       <Play key={i} law={music} />
       <Stack direction="row" spacing={1}>
-        {codeList.map((t, i) => (
+        {Object.entries(ViewCode).map(([key, value]) =>
+          <SimpleDialogbutton text={key} codeList={value} onSelect={(code) => { setMusic(da => [...da, code]) }} />
+        )}
+      </Stack>
+
+      {/* {codeList.map((t, i) => (
           // <Sebutton
           //   codeName={t.codeName}
           //   onClick={() => {
@@ -31,9 +37,8 @@ function App() {
           //       console.log(music);
           //     }
           //   }} />
-          <SimpleDialogbutton text={t.codeName} codeList={codeList} onSelect={() => { setMusic(da => [...da, t]) }} />
-        ))}
-      </Stack>
+          <SimpleDialogbutton text={t.codeName} codeList={codeList} onSelect={(code) => { setMusic(da => [...da, code]) }} />
+        ))} */}
       <div>
         <Stack direction="row" spacing={4}>
           {Array.from(new Array(4)).map((_, i) => (
@@ -68,6 +73,8 @@ function App() {
           ))
           }</Stack>
       </div>
+      <Sebutton codeName="リセット" onClick={() => { setMusic([]) }} />
+      <Sebutton codeName="ノードを1つ消す" onClick={() => { setMusic(da => da.slice(0, -1)) }} />
     </>
   );
 }

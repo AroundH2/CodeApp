@@ -55,9 +55,44 @@ export const codeList: CodeType[] = [
     { codeName: "Bm", code: Code.Bm4 },
 ];
 
-export const ViwCode = [
-    "C", "D", "E", "F", "G", "A", "B"
-];
+export const Ccode: CodeType[] = [
+    { codeName: "C", code: Code.C4, },
+    { codeName: "Cm", code: Code.Cm4 },
+]
+
+export const Dcode: CodeType[] = [
+    { codeName: "D", code: Code.D4, },
+    { codeName: "Dm", code: Code.Dm4 },
+]
+
+export const Ecode: CodeType[] = [
+    { codeName: "E", code: Code.E4, },
+    { codeName: "Em", code: Code.Em4 },
+]
+
+export const Fcode: CodeType[] = [
+    { codeName: "F", code: Code.F4, },
+    { codeName: "Fm", code: Code.Fm4 },
+]
+
+export const Gcode: CodeType[] = [
+    { codeName: "G", code: Code.G4, },
+    { codeName: "Gm", code: Code.Gm4 },
+]
+
+export const Acode: CodeType[] = [
+    { codeName: "A", code: Code.A4, },
+    { codeName: "Am", code: Code.Am4 },
+]
+
+export const Bcode: CodeType[] = [
+    { codeName: "B", code: Code.B4, },
+    { codeName: "Bm", code: Code.Bm4 },
+]
+
+export const ViewCode = {
+    "C": Ccode, "D": Dcode, "E": Ecode, "F": Fcode, "G": Gcode, "A": Acode, "B": Bcode
+};
 
 export const DialogCode = [
     "M", "m"
