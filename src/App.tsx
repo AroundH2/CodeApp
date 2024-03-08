@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <Typography variant="h2" gutterBottom>
-        Coder
+        Music Coder
       </Typography>
       <Play key={i} law={music} />
       <Stack direction="row" spacing={1}>
